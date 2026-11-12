@@ -78,13 +78,14 @@ main{flex:1;min-height:0;position:relative;overflow:hidden;touch-action:pan-y}
 .tic{display:inline-flex;vertical-align:-2px;margin-right:4px;color:var(--ok)}.tic svg{width:13px;height:13px}
 .x{border:0;background:var(--trashbg);color:var(--sun);width:44px;height:34px;flex:none;border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:var(--sh)}
 .x:active{filter:brightness(.92)}
-.st{display:grid;grid-template-columns:1fr 1fr;gap:6px;min-width:0}
+.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:6px;min-width:0}
 .st>div{min-width:0}
 .sr{display:flex;gap:3px;min-width:0}
+.lb{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--mu);margin:0 0 3px 2px}
 .b{width:34px;height:38px;border:0;border-radius:10px;background:var(--pr);color:var(--onpr);padding:0;display:flex;align-items:center;justify-content:center;transition:filter .1s}
 .b svg{width:16px;height:16px}
 .b:active{filter:brightness(.82)}
-.sr input{flex:1;min-width:0;height:38px;text-align:center;font-size:15.5px;font-weight:600;padding:0;border-radius:10px;border:1px solid var(--bd);background:var(--inp);color:var(--tx)}
+.sr input{flex:1;min-width:0;height:38px;text-align:center;font-size:16.5px;font-weight:600;padding:0 2px;text-overflow:clip;border-radius:10px;border:1px solid var(--bd);background:var(--inp);color:var(--tx)}
 .sr input::-webkit-calendar-picker-indicator{display:none}
 .x svg{width:16px;height:16px}
 
@@ -242,7 +243,7 @@ var ICO={
   chevr:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>',
   download:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v11.5M7.2 10.7 12 15.5l4.8-4.8"/><path d="M5 19.5h14"/></svg>'
 };
-function sp(f,lab,v,big){return'<div><div class="sr"><button class="b" data-a="-1" data-f="'+f+'" aria-label="Diminuisci '+lab+'">'+ICO.minus+'</button><input type="time" data-f="'+f+'" value="'+(v||"")+'" aria-label="'+lab+'"><button class="b" data-a="1" data-f="'+f+'" aria-label="Aumenta '+lab+'">'+ICO.plus+'</button></div></div>'}
+function sp(f,lab,v,big){return'<div><span class="lb">'+lab+'</span><div class="sr"><button class="b" data-a="-1" data-f="'+f+'" aria-label="Diminuisci '+lab+'">'+ICO.minus+'</button><input type="time" data-f="'+f+'" value="'+(v||"")+'" aria-label="'+lab+'"><button class="b" data-a="1" data-f="'+f+'" aria-label="Aumenta '+lab+'">'+ICO.plus+'</button></div></div>'}
 $("t0").querySelector(".ic").innerHTML=ICO.flag;
 $("t1").querySelector(".ic").innerHTML=ICO.cal;
 $("t2").querySelector(".ic").innerHTML=ICO.chart;
